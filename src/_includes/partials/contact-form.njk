@@ -1,5 +1,108 @@
-{# Contact form (Web3Forms) — implemented by Track D.
-   A static <form> POSTing to https://api.web3forms.com/submit using the
-   access key in site.contact.web3formsAccessKey, with a honeypot field,
-   a success/error state, and a graceful mailto: fallback when no key is set.
-   Styles live in /assets/css/contact-form.css. #}
+{# Contact form (Web3Forms) — implemented by Track D. #}
+{% if site.contact.web3formsAccessKey %}
+<section class="contact-card" aria-labelledby="contact-form-title">
+  <div class="contact-card__header">
+    <p class="contact-card__eyebrow">Agenda y consultas</p>
+    <h2 id="contact-form-title">Cuéntame qué necesitas reforzar</h2>
+    <p>Responderé para coordinar disponibilidad, modalidad y objetivos de aprendizaje.</p>
+  </div>
+
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-describedby="contact-form-status">
+    <input type="hidden" name="access_key" value="{{ site.contact.web3formsAccessKey }}">
+    <input type="hidden" name="from_name" value="{{ site.name }}">
+    <input type="hidden" name="subject" value="Nuevo contacto desde alejandraherreros.com">
+    <input type="hidden" name="redirect" value="https://alejandraherreros.com/contact-us/?enviado=1">
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" aria-hidden="true" tabindex="-1">
+
+    <div class="contact-form__grid">
+      <div class="contact-form__field">
+        <label for="contact-name">Nombre</label>
+        <input id="contact-name" name="name" type="text" autocomplete="name" required>
+      </div>
+
+      <div class="contact-form__field">
+        <label for="contact-email">Email</label>
+        <input id="contact-email" name="email" type="email" autocomplete="email" required>
+      </div>
+
+      <div class="contact-form__field">
+        <label for="contact-phone">Teléfono <span>(opcional)</span></label>
+        <input id="contact-phone" name="phone" type="tel" autocomplete="tel">
+      </div>
+
+      <div class="contact-form__field">
+        <label for="contact-level">Curso/Nivel</label>
+        <select id="contact-level" name="nivel" autocomplete="off" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Enseñanza Media">Enseñanza Media</option>
+          <option value="Preparación PDT">Preparación PDT</option>
+          <option value="Universidad">Universidad</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="contact-form__field">
+      <label for="contact-message">Mensaje</label>
+      <textarea id="contact-message" name="message" rows="6" autocomplete="off" required placeholder="Cuéntame el curso, la materia y si buscas clases individuales o grupales."></textarea>
+    </div>
+
+    <p id="contact-form-status" class="contact-form__status" role="status" aria-live="polite" hidden></p>
+
+    <button class="btn contact-form__button" type="submit">Enviar consulta</button>
+  </form>
+</section>
+
+<script>
+  (() => {
+    const form = document.querySelector('.contact-form');
+    const status = document.getElementById('contact-form-status');
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get('enviado') === '1' && status) {
+      status.hidden = false;
+      status.className = 'contact-form__status contact-form__status--success';
+      status.textContent = 'Gracias, tu consulta fue enviada correctamente.';
+    }
+
+    if (!form || !status || !window.fetch) return;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const button = form.querySelector('button[type="submit"]');
+      button.disabled = true;
+      status.hidden = false;
+      status.className = 'contact-form__status';
+      status.textContent = 'Enviando tu consulta…';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.message || 'No se pudo enviar.');
+        form.reset();
+        status.className = 'contact-form__status contact-form__status--success';
+        status.textContent = 'Gracias, tu consulta fue enviada correctamente. Responderé pronto.';
+      } catch (error) {
+        status.className = 'contact-form__status contact-form__status--error';
+        status.textContent = 'No se pudo enviar el formulario. Inténtalo de nuevo o escribe al email indicado.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  })();
+</script>
+{% else %}
+<section class="contact-card contact-card--fallback" aria-labelledby="contact-fallback-title">
+  <p class="contact-card__eyebrow">Formulario en preparación</p>
+  <h2 id="contact-fallback-title">Escríbeme por email</h2>
+  <p>El formulario de contacto quedará habilitado cuando se configure la clave pública de Web3Forms.</p>
+  <p class="contact-card__email">
+    Por ahora puedes escribir a
+    <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>.
+  </p>
+</section>
+{% endif %}
