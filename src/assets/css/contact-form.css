@@ -1,4 +1,185 @@
-/*
- * Contact form styles — implemented by Track D.
- * Build on the variables defined in tokens.css.
- */
+/* Contact form styles — implemented by Track D. */
+.contact-card {
+  background: linear-gradient(180deg, var(--color-paper) 0%, var(--color-bg-subtle) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  margin-block: var(--space-6);
+  max-width: var(--container-narrow);
+  padding: clamp(var(--space-5), 5vw, var(--space-7));
+}
+
+.contact-card__header {
+  margin-bottom: var(--space-5);
+}
+
+.contact-card__header h2,
+.contact-card--fallback h2 {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
+  line-height: var(--leading-tight);
+  margin: 0 0 var(--space-3);
+}
+
+.contact-card__header p,
+.contact-card--fallback p {
+  color: var(--color-ink-soft);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+.contact-card__eyebrow {
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-2) !important;
+  text-transform: uppercase;
+}
+
+.contact-form {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.contact-form__grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-form__field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.contact-form label {
+  color: var(--color-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.contact-form label span {
+  color: var(--color-muted);
+  font-weight: var(--weight-body);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-ink);
+  font: inherit;
+  min-height: 3rem;
+  padding: 0.85rem 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
+}
+
+.contact-form textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--ring);
+  outline: none;
+}
+
+.contact-form__status {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-ink-soft);
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+}
+
+.contact-form__status--success {
+  background: var(--color-blue-50);
+  border-color: var(--color-blue-100);
+  color: var(--color-blue-darker);
+}
+
+.contact-form__status--error {
+  background: #fff5f5;
+  border-color: #f3c5c5;
+  color: #9f2a2a;
+}
+
+.contact-form__button,
+.btn.contact-form__button {
+  align-items: center;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-primary-contrast);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: var(--weight-medium);
+  justify-content: center;
+  justify-self: start;
+  min-height: 3rem;
+  padding: 0.85rem var(--space-5);
+  text-decoration: none;
+  transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.contact-form__button:hover,
+.btn.contact-form__button:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.contact-form__button:focus-visible,
+.btn.contact-form__button:focus-visible {
+  box-shadow: var(--ring);
+  outline: none;
+}
+
+.contact-form__button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+
+.contact-card--fallback {
+  border-style: dashed;
+}
+
+.contact-card__email {
+  margin-top: var(--space-4) !important;
+}
+
+.contact-card a {
+  color: var(--color-link);
+  font-weight: var(--weight-medium);
+}
+
+.contact-card a:hover {
+  color: var(--color-link-hover);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 680px) {
+  .contact-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form__button,
+  .btn.contact-form__button {
+    justify-self: stretch;
+  }
+}
