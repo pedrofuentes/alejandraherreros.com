@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {%- if title %}{{ title }} · {{ site.shortName }}{% else %}{{ site.name }} · {{ site.tagline }}{% endif -%}
+    </title>
+    <link rel="preconnect" href="https://api.web3forms.com" crossorigin />
+    <link rel="stylesheet" href="/assets/css/tokens.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/contact-form.css" />
+    {% include "partials/seo-head.njk" %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    {% include "partials/header.njk" %}
+    <main id="main">
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
+  </body>
+</html>

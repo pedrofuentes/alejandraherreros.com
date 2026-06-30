@@ -1,0 +1,71 @@
+/*
+ * Design tokens for alejandraherreros.com
+ * Single source of truth for color, type, spacing. Tracks B and D build on these.
+ * Palette derived from the current site: blue #337AB7, ink #333, paper #fff.
+ */
+:root {
+  /* Brand palette */
+  --color-blue: #337ab7;
+  --color-blue-dark: #285f8f;
+  --color-blue-darker: #1f4b73;
+  --color-blue-50: #eaf2f9;
+  --color-blue-100: #d6e6f3;
+  --color-ink: #333333;
+  --color-ink-soft: #555b62;
+  --color-paper: #ffffff;
+  --color-muted: #6b7280;
+  --color-border: #e4e8ec;
+  --color-bg-subtle: #f6f8fa;
+
+  /* Semantic aliases */
+  --color-text: var(--color-ink);
+  --color-heading: #20232a;
+  --color-primary: var(--color-blue);
+  --color-primary-hover: var(--color-blue-dark);
+  --color-primary-contrast: #ffffff;
+  --color-link: var(--color-blue-dark);
+  --color-link-hover: var(--color-blue-darker);
+
+  /* Typography */
+  --font-heading: "Oswald", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Roboto", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.5rem;
+  --leading-tight: 1.15;
+  --leading-normal: 1.65;
+  --tracking-heading: 0.01em;
+  --weight-body: 400;
+  --weight-medium: 500;
+  --weight-heading: 600;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Layout */
+  --container-max: 1120px;
+  --container-narrow: 760px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.1);
+  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08);
+  --shadow-lg: 0 18px 40px rgba(16, 24, 40, 0.14);
+  --ring: 0 0 0 3px rgba(51, 122, 183, 0.35);
+
+  /* Motion */
+  --transition: 180ms ease;
+}

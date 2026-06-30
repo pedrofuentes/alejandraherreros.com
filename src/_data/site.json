@@ -1,0 +1,23 @@
+{
+  "name": "Alejandra Herreros Bofill",
+  "shortName": "Alejandra Herreros",
+  "tagline": "Profesora Particular de Física y Matemática",
+  "lang": "es-CL",
+  "locale": "es_CL",
+  "url": "https://alejandraherreros.com",
+  "description": "Clases particulares de Física y Matemática en Chile. 25 años de experiencia como profesora de Educación Media. Clases individuales o grupales y preparación PDT, adaptadas a tus metas, estilo de aprendizaje y horario.",
+  "author": "Alejandra Herreros Bofill",
+  "credentials": "Pontificia Universidad Católica de Chile (PUC)",
+  "contact": {
+    "email": "REPLACE_WITH_DESTINATION_EMAIL",
+    "web3formsAccessKey": ""
+  },
+  "nav": [
+    { "label": "Inicio", "url": "/" },
+    { "label": "Clases", "url": "/clases/" },
+    { "label": "Trayectoria", "url": "/trayectoria/" },
+    { "label": "Recomendaciones", "url": "/recomendaciones/" },
+    { "label": "Contacto", "url": "/contact-us/" }
+  ],
+  "social": []
+}
