@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+title: Contacto
+description: Contacta a Alejandra Herreros para coordinar clases particulares de Física y Matemática, individuales o grupales, y preparación PDT.
+---
+{% import "partials/macros.njk" as ui %}
+
+{% call ui.section("contacto", "Contacto", "Conversemos sobre tus clases") %}
+  <div class="prose">
+    <p class="lead">Si eres estudiante, apoderada o apoderado, escríbeme para coordinar clases de Física y Matemática —individuales o grupales— o preparación PDT según tus objetivos y horarios.</p>
+  </div>
+
+  {% include "partials/contact-form.njk" %}
+
+  <p class="contact-alternate">También puedes escribirme directamente a <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>.</p>
+{% endcall %}

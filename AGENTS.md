@@ -4,7 +4,7 @@
 
 Este repositorio contiene el sitio brochure de **Alejandra Herreros Bofill**, profesora particular de **Física y Matemática** formada en la **Pontificia Universidad Católica de Chile (PUC)**. El sitio está pensado para estudiantes, apoderados y personas que buscan clases particulares en Chile.
 
-La reconstrucción deja el sitio en una arquitectura simple para que la dueña del contenido, o un agente de IA, pueda actualizar textos editando **Markdown** y **JSON**, hacer commit y dejar que CI publique automáticamente.
+La reconstrucción deja el sitio en una arquitectura simple para que la dueña del contenido, o un agente de IA, pueda actualizar textos editando **plantillas Nunjucks (`.njk`)** y datos **JSON**, hacer commit y dejar que CI publique automáticamente.
 
 - **Stack:** Eleventy (11ty) v3, Nunjucks, Markdown, CSS estático y cero JavaScript en el sitio público.
 - **Idioma de trabajo:** español de Chile, `es-CL`.
@@ -48,8 +48,8 @@ src/_includes/layouts/base.njk
 src/_includes/partials/
   Parciales reutilizables como header.njk, footer.njk, seo-head.njk, contact-form.njk y componentes visuales. Algunos parciales pueden variar por track, pero la regla es mantener contenido reutilizable aquí.
 
-src/<slug>.md
-  Una página Markdown por URL, con front matter YAML. Páginas actuales: index.md, clases.md, trayectoria.md, recomendaciones.md, contact-us.md y leer-mas-programacion.md.
+src/<slug>.njk
+  Una página Nunjucks por URL, con front matter YAML y macros reutilizables. Páginas actuales: index.njk, clases.njk, trayectoria.njk, recomendaciones.njk, contact-us.njk y leer-mas-programacion.njk.
 
 src/404.njk
   Página 404 estática.
@@ -74,19 +74,24 @@ CNAME
 
 ### Páginas
 
-Cada URL pública principal vive como un archivo Markdown en `src/`:
+Cada URL pública principal vive como una plantilla Nunjucks (`.njk`) en `src/`, con front matter YAML y componentes reutilizables (macros) para componer la página sin JavaScript:
 
-```md
+```njk
 ---
 layout: layouts/base.njk
 title: Clases
 description: Clases de Física y Matemática individuales o grupales...
 ---
+{% import "partials/macros.njk" as ui %}
 
-# Clases
-
-Contenido de la página...
+{% call ui.section("clases", "Clases", "Título de la sección", "Texto introductorio.") %}
+  <div class="prose">
+    <p>Contenido de la página. Edita el texto entre las etiquetas.</p>
+  </div>
+{% endcall %}
 ```
+
+Para editar el texto de una página, cambia los textos dentro de las llamadas a macros (por ejemplo el título o la introducción de `ui.section(...)`, o el texto de `ui.featureCard(...)`) o el contenido dentro de los bloques `<div class="prose">…</div>`. Los componentes disponibles (`hero`, `section`, `cardGrid`, `featureCard`, `testimonial`, `cta`, `button`) están documentados en `src/_includes/partials/macros.njk`.
 
 Campos base de front matter:
 
@@ -119,12 +124,12 @@ Preservar estos slugs para no romper SEO, links externos ni historial del sitio:
 
 | Archivo | URL |
 | --- | --- |
-| `src/index.md` | `/` |
-| `src/clases.md` | `/clases/` |
-| `src/trayectoria.md` | `/trayectoria/` |
-| `src/recomendaciones.md` | `/recomendaciones/` |
-| `src/contact-us.md` | `/contact-us/` |
-| `src/leer-mas-programacion.md` | `/leer-mas-programacion/` |
+| `src/index.njk` | `/` |
+| `src/clases.njk` | `/clases/` |
+| `src/trayectoria.njk` | `/trayectoria/` |
+| `src/recomendaciones.njk` | `/recomendaciones/` |
+| `src/contact-us.njk` | `/contact-us/` |
+| `src/leer-mas-programacion.njk` | `/leer-mas-programacion/` |
 
 No renombrar `contact-us` aunque el texto visible sea “Contacto”, porque el slug puede tener valor SEO/histórico.
 
@@ -133,13 +138,13 @@ No renombrar `contact-us` aunque el texto visible sea “Contacto”, porque el 
 ### Update copy on an existing page
 
 1. Abrir el archivo de la página:
-   - Home: `src/index.md`
-   - Clases: `src/clases.md`
-   - Trayectoria: `src/trayectoria.md`
-   - Recomendaciones: `src/recomendaciones.md`
-   - Contacto: `src/contact-us.md`
-   - Programación de clases: `src/leer-mas-programacion.md`
-2. Editar solo el texto bajo el front matter `---`.
+   - Home: `src/index.njk`
+   - Clases: `src/clases.njk`
+   - Trayectoria: `src/trayectoria.njk`
+   - Recomendaciones: `src/recomendaciones.njk`
+   - Contacto: `src/contact-us.njk`
+   - Programación de clases: `src/leer-mas-programacion.njk`
+2. Editar los textos dentro de las llamadas a macros (`ui.section(...)`, `ui.hero(...)`, `ui.featureCard(...)`) o dentro de los bloques `<div class="prose">…</div>`.
 3. Si cambia el foco de la página, actualizar también `description`.
 4. Probar localmente:
 
@@ -152,7 +157,7 @@ npm run serve
 
 ### Update the bio / trayectoria
 
-1. Editar `src/trayectoria.md`.
+1. Editar `src/trayectoria.njk`.
 2. Mantener el contenido en español chileno, tono profesional y cercano.
 3. Conservar hechos importantes: nombre completo, formación PUC, experiencia docente y foco en Física/Matemática.
 4. Si el resumen SEO cambia, editar `description` en el front matter.
@@ -196,19 +201,22 @@ Reglas:
 
 ### Add a new page
 
-1. Crear `src/<slug>.md`, por ejemplo `src/preguntas-frecuentes.md`.
+1. Crear `src/<slug>.njk`, por ejemplo `src/preguntas-frecuentes.njk`.
 2. Agregar front matter mínimo:
 
-```md
+```njk
 ---
 layout: layouts/base.njk
 title: Preguntas frecuentes
 description: Preguntas frecuentes sobre las clases particulares de Física y Matemática de Alejandra Herreros.
 ---
+{% import "partials/macros.njk" as ui %}
 
-# Preguntas frecuentes
-
-Contenido de la nueva página...
+{% call ui.section("faq", "Preguntas frecuentes", "Preguntas frecuentes") %}
+  <div class="prose">
+    <p>Contenido de la nueva página...</p>
+  </div>
+{% endcall %}
 ```
 
 3. La URL publicada será `/<slug>/`, por ejemplo `/preguntas-frecuentes/`.
@@ -234,10 +242,10 @@ npm run build
 src/assets/images/alejandra-clases-fisica.jpg
 ```
 
-2. Referenciarla desde Markdown o Nunjucks con la ruta pública:
+2. Referenciarla desde la plantilla con la ruta pública:
 
-```md
-![Alejandra Herreros haciendo una clase particular de Física](/assets/images/alejandra-clases-fisica.jpg)
+```html
+<img src="/assets/images/alejandra-clases-fisica.jpg" alt="Alejandra Herreros haciendo una clase particular de Física" loading="lazy" />
 ```
 
 3. Usar nombres de archivo descriptivos, en minúsculas y con guiones.

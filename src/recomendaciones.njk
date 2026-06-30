@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Recomendaciones
+description: Recomendaciones de estudiantes y apoderados sobre las clases particulares de Física y Matemática de Alejandra Herreros.
+---
+{% import "partials/macros.njk" as ui %}
+
+{% call ui.section("recomendaciones", "Recomendaciones", "Lo que dicen mis estudiantes", "Estoy reuniendo las recomendaciones de estudiantes y apoderados con quienes he trabajado a lo largo de estos años. Pronto encontrarás aquí sus testimonios.") %}
+  <div class="prose">
+    <p>Si hiciste clases conmigo y te gustaría compartir tu experiencia, me encantaría leer tu recomendación. Tu testimonio ayuda a otras y otros estudiantes a dar el primer paso.</p>
+  </div>
+  <div class="button-row">
+    {{ ui.button("Dejar mi recomendación", "/contact-us/", "primary") }}
+  </div>
+{% endcall %}
+
+{{ ui.cta(
+  "¿Quieres empezar tus clases?",
+  "Conversemos sobre tus objetivos en Física o Matemática y encontremos la modalidad que mejor se ajuste a ti.",
+  "/contact-us/",
+  "Escríbeme",
+  "/clases/",
+  "Ver clases"
+) }}

@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+title: Trayectoria
+description: Trayectoria de Alejandra Herreros Bofill, profesora de Física y Matemática formada en la Pontificia Universidad Católica de Chile, con 25 años de experiencia en Educación Media.
+---
+{% import "partials/macros.njk" as ui %}
+
+{% call ui.section("trayectoria", "Trayectoria", "Sobre mí") %}
+  <div class="about-grid">
+    <div class="prose">
+      <p class="lead">Soy Alejandra Herreros Bofill, profesora de Física y Matemática formada en la Pontificia Universidad Católica de Chile.</p>
+      <p>Tengo 25 años de experiencia haciendo clases de Física en Educación Media. En este tiempo he acompañado a muchos estudiantes a mejorar sus notas, recuperar la confianza y prepararse para sus pruebas con una metodología cercana y clara.</p>
+      <p>Mi forma de trabajar combina rigor y cercanía: primero identificamos dónde está la dificultad y luego construimos juntos una ruta de trabajo con ejercicios, conversación y retroalimentación constante.</p>
+      <ul class="highlight-list">
+        <li>Clases individuales o grupales según tus objetivos y disponibilidad.</li>
+        <li>Reforzamiento de Matemática y Física de 7° básico a IV° medio.</li>
+        <li>Preparación PDT, partiendo de cero o para subir tu puntaje.</li>
+        <li>Informe de avance mensual y material de apoyo para estudiar con autonomía.</li>
+      </ul>
+    </div>
+    <figure class="about-portrait">
+      <img
+        src="/assets/images/whatsapp-image-2021-03-02-at-7-31-16-pm.jpg"
+        width="225"
+        height="300"
+        alt="Retrato de Alejandra Herreros Bofill, profesora de Física y Matemática"
+        loading="lazy"
+      />
+    </figure>
+  </div>
+{% endcall %}
+
+{{ ui.cta(
+  "¿Conversamos?",
+  "Escríbeme para coordinar tus clases de Física o Matemática.",
+  "/contact-us/",
+  "Ir a contacto",
+  "/clases/",
+  "Ver clases"
+) }}

@@ -818,3 +818,56 @@ svg {
     width: 2.65rem;
   }
 }
+
+/* Page: Trayectoria — bio + portrait layout */
+.about-grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+.about-portrait {
+  margin: 0;
+  order: -1;
+}
+
+.about-portrait img {
+  width: 100%;
+  max-width: 18rem;
+  height: auto;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 0.5rem solid var(--color-paper);
+}
+
+@media (min-width: 48rem) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 0.8fr);
+  }
+
+  .about-portrait {
+    order: 0;
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-5));
+  }
+}
+
+/* Page: Contacto — alternate contact line */
+.contact-alternate {
+  margin-top: var(--space-5);
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+/* Footer CTA button — keep readable on the dark footer
+   (overrides the white `.site-footer a` link color + hover underline). */
+.site-footer .button,
+.site-footer .button:hover {
+  text-decoration: none;
+}
+
+.site-footer .button--secondary,
+.site-footer .button--secondary:hover {
+  color: var(--color-blue-darker);
+}

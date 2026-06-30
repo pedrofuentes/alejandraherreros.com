@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: Clases
+description: Clases de Física y Matemática individuales o grupales, reforzamiento de 7° a IV° medio y preparación PDT, adaptadas a tus metas, estilo de aprendizaje y horario.
+---
+{% import "partials/macros.njk" as ui %}
+
+{% call ui.section("clases", "Clases", "Física y Matemática a tu medida", "Clases interactivas online, individuales o grupales (máximo 4 estudiantes), con retroalimentación inmediata e informe de avance mensual al apoderado.") %}
+  {% call ui.cardGrid("2") %}
+    {{ ui.featureCard("∑", "Reforzamiento escolar", "Matemática y Física para estudiantes de 7° básico a IV° medio. Reforzamos contenidos, ordenamos hábitos de estudio y preparamos pruebas.", "/leer-mas-programacion/", "Ver programa") }}
+    {{ ui.featureCard("↗", "Preparación PDT", "Plan de práctica progresiva en Matemática y Física para la Prueba de Transición, con ensayos online y más de 1000 ejercicios.", "/leer-mas-programacion/", "Ver preparación") }}
+  {% endcall %}
+{% endcall %}
+
+{% call ui.section("metodologia", "Metodología", "Cómo trabajamos", "Una forma de enseñar cercana y ordenada, pensada para que cada estudiante entienda, practique y recupere la confianza.", "alt") %}
+  <ul class="highlight-list">
+    <li>Clases interactivas online, individuales o grupales (máximo 4 estudiantes).</li>
+    <li>Ensayos online y cientos de ejercicios según la asignatura.</li>
+    <li>Retroalimentación inmediata en cada clase.</li>
+    <li>Informe de avance mensual al apoderado.</li>
+  </ul>
+{% endcall %}
+
+{{ ui.cta(
+  "¿Listo para empezar?",
+  "Consulta los valores y la disponibilidad escribiéndome directamente.",
+  "/contact-us/",
+  "Consultar valores",
+  "/leer-mas-programacion/",
+  "Ver programa completo"
+) }}
