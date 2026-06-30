@@ -1,8 +1,33 @@
-{# Site header + primary navigation — implemented by Track B.
-   Render site.shortName/brand and loop site.nav. Keep it accessible
-   (nav landmark, aria-current on the active link) and responsive. #}
 <header class="site-header">
-  <nav aria-label="Principal">
-    <a href="/">{{ site.shortName }}</a>
-  </nav>
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="{{ site.name }} — inicio">
+      <span class="brand__mark" aria-hidden="true">AH</span>
+      <span class="brand__text">
+        <span class="brand__name">{{ site.shortName }}</span>
+        <span class="brand__tagline">Física &amp; Matemática</span>
+      </span>
+    </a>
+
+    <nav class="primary-nav primary-nav--desktop" aria-label="Principal">
+      <ul>
+        {% for item in site.nav %}
+          <li><a href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <details class="mobile-nav">
+      <summary aria-label="Abrir menú de navegación">
+        <span class="mobile-nav__label">Menú</span>
+        <span class="mobile-nav__icon" aria-hidden="true"></span>
+      </summary>
+      <nav aria-label="Principal móvil">
+        <ul>
+          {% for item in site.nav %}
+            <li><a href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </details>
+  </div>
 </header>
