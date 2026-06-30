@@ -1,4 +1,22 @@
-{# SEO / meta tags — implemented by Track F.
-   Should add: meta description, canonical URL, Open Graph + Twitter cards,
-   favicon links, theme-color. Build on values from src/_data/site.json. #}
-<meta name="description" content="{{ description or site.description }}" />
+{%- set metaTitle = title or site.name -%}
+{%- set metaDescription = description or site.description -%}
+{%- set absoluteUrl = site.url ~ page.url -%}
+{%- set ogImage = site.url ~ '/assets/og-default.jpg' -%}
+<meta name="description" content="{{ metaDescription }}" />
+<link rel="canonical" href="{{ absoluteUrl }}" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:title" content="{{ metaTitle }}" />
+<meta property="og:description" content="{{ metaDescription }}" />
+<meta property="og:url" content="{{ absoluteUrl }}" />
+<meta property="og:locale" content="{{ site.locale }}" />
+<meta property="og:image" content="{{ ogImage }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ metaTitle }}" />
+<meta name="twitter:description" content="{{ metaDescription }}" />
+<meta name="twitter:image" content="{{ ogImage }}" />
+<meta name="theme-color" content="#337AB7" />
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
