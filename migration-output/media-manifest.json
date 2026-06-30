@@ -1,0 +1,449 @@
+{
+  "extractedAt": "2026-06-30T21:47:11.638Z",
+  "sourcePages": [
+    {
+      "slug": "index",
+      "url": "https://alejandraherreros.com/"
+    },
+    {
+      "slug": "clases",
+      "url": "https://alejandraherreros.com/clases/"
+    },
+    {
+      "slug": "trayectoria",
+      "url": "https://alejandraherreros.com/trayectoria/"
+    },
+    {
+      "slug": "recomendaciones",
+      "url": "https://alejandraherreros.com/recomendaciones/"
+    },
+    {
+      "slug": "contact-us",
+      "url": "https://alejandraherreros.com/contact-us/"
+    },
+    {
+      "slug": "leer-mas-programacion",
+      "url": "https://alejandraherreros.com/leer-mas-programacion/"
+    }
+  ],
+  "headerVideo": {
+    "found": false,
+    "value": "none found"
+  },
+  "profilePhoto": {
+    "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-02-at-7.31.16-PM.jpeg",
+    "localPath": "/assets/images/whatsapp-image-2021-03-02-at-7-31-16-pm.jpg",
+    "note": "Likely profile photo supplied in migration brief."
+  },
+  "heroImages": {
+    "index": {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-02-at-7.31.16-PM.jpeg",
+      "localPath": "/assets/images/whatsapp-image-2021-03-02-at-7-31-16-pm.jpg"
+    },
+    "clases": {
+      "originalUrl": "http://alejandraherreros.com/wp-content/uploads/2021/03/40_0_246_154_imagen-para-programas.png",
+      "localPath": "/assets/images/40-0-246-154-imagen-para-programas.png"
+    },
+    "recomendaciones": {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/ixlibrb-0.3.5q80fmjpgcropentropycstinysrgbw300h300fitcrops2a6be7c6ca012580c1d4e4e62004f86f.jpg",
+      "localPath": "/assets/images/ixlibrb-0-3-5q80fmjpgcropentropycstinysrgbw300h300fitcrops2a6be7c6ca012580c1d4e4e62004f86f.jpg"
+    },
+    "contact-us": {
+      "originalUrl": "https://alejandraherreros.com/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg",
+      "localPath": "/assets/images/submit-spin.svg"
+    },
+    "leer-mas-programacion": {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/math.png",
+      "localPath": "/assets/images/math.png"
+    }
+  },
+  "media": [
+    {
+      "originalUrl": "http://alejandraherreros.com/wp-content/uploads/2021/03/40_0_246_154_imagen-para-programas.png",
+      "localPath": "/assets/images/40-0-246-154-imagen-para-programas.png",
+      "mime": "image/png",
+      "width": 246,
+      "height": 154,
+      "altText": "",
+      "usedOnPages": [
+        "clases"
+      ]
+    },
+    {
+      "originalUrl": "http://alejandraherreros.com/wp-content/uploads/2021/03/82_236_400_250.54413542926_Metolodogia.jpg",
+      "localPath": "/assets/images/82-236-400-250-54413542926-metolodogia.jpg",
+      "mime": "image/jpeg",
+      "width": 400,
+      "height": 250,
+      "altText": "",
+      "usedOnPages": [
+        "clases"
+      ]
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg",
+      "localPath": "/assets/images/submit-spin.svg",
+      "mime": "image/svg+xml",
+      "width": 26,
+      "height": 26,
+      "altText": "Cargando",
+      "usedOnPages": [
+        "contact-us"
+      ]
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/0_74_350_262_grovemade-DhZ5BpBeQEM-unsplash-imhwpb-a7dlwytddlctreh.jpg",
+      "localPath": "/assets/images/0-74-350-262-grovemade-dhz5bpbeqem-unsplash-imhwpb-a7dlwytddlctreh.jpg",
+      "mime": "image/jpeg",
+      "width": 350,
+      "height": 262,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/124675.png",
+      "localPath": "/assets/images/124675.png",
+      "mime": "image/png",
+      "width": 123,
+      "height": 123,
+      "altText": "",
+      "usedOnPages": [
+        "leer-mas-programacion"
+      ]
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/40_0_246_154_imagen-para-programas.png",
+      "localPath": "/assets/images/40-0-246-154-imagen-para-programas-2.png",
+      "mime": "image/png",
+      "width": 246,
+      "height": 154,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/690908.png",
+      "localPath": "/assets/images/690908.png",
+      "mime": "image/png",
+      "width": 512,
+      "height": 512,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/800px-Emc2.svg_-1.png",
+      "localPath": "/assets/images/800px-emc2-svg-1.png",
+      "mime": "image/png",
+      "width": 800,
+      "height": 209,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/800px-Emc2.svg_.png",
+      "localPath": "/assets/images/800px-emc2-svg.png",
+      "mime": "image/png",
+      "width": 800,
+      "height": 209,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/82_236_400_250.54413542926_Metolodogia.jpg",
+      "localPath": "/assets/images/82-236-400-250-54413542926-metolodogia-2.jpg",
+      "mime": "image/jpeg",
+      "width": 400,
+      "height": 251,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/aHR0cHM6Ly9zb3VyY2UudW5zcGxhc2guY29tL0h6RWIzWlJ0Vjg4LzYwMHg0NTA_3D-imhwpb-qiic6rmqaoosy7y.jpg",
+      "localPath": "/assets/images/ahr0chm6ly9zb3vyy2uudw5zcgxhc2guy29tl0h6rwizwlj0vjg4lzywmhg0nta-3d-imhwpb-qiic6rmqaoosy7y.jpg",
+      "mime": "image/jpeg",
+      "width": 600,
+      "height": 450,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/aHR0cHM6Ly9zb3VyY2UudW5zcGxhc2guY29tL2dwOEJMeWFUYUEwLzYwMHgzMDA_3D-imhwpb-3hx4cj8bmyayisq.jpg",
+      "localPath": "/assets/images/ahr0chm6ly9zb3vyy2uudw5zcgxhc2guy29tl2dwoejmewfuyuewlzywmhgzmda-3d-imhwpb-3hx4cj8bmyayisq.jpg",
+      "mime": "image/jpeg",
+      "width": 600,
+      "height": 300,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/aHR0cHM6Ly9zb3VyY2UudW5zcGxhc2guY29tL3ppd3VxTVpOUnZzLzYwMHg0NTA_3D-imhwpb-ppp2ygjccmcas83.jpg",
+      "localPath": "/assets/images/ahr0chm6ly9zb3vyy2uudw5zcgxhc2guy29tl3ppd3vxtvpounzzlzywmhg0nta-3d-imhwpb-ppp2ygjccmcas83.jpg",
+      "mime": "image/jpeg",
+      "width": 600,
+      "height": 450,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/andres-jasso-ayAiC1mY13I-unsplash-imhwpb-mn9nxktacfnc38g.jpg",
+      "localPath": "/assets/images/andres-jasso-ayaic1my13i-unsplash-imhwpb-mn9nxktacfnc38g.jpg",
+      "mime": "image/jpeg",
+      "width": 350,
+      "height": 350,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/b70d57c4-dbf0141f-pressmaster151200323.jpg",
+      "localPath": "/assets/images/b70d57c4-dbf0141f-pressmaster151200323.jpg",
+      "mime": "image/jpeg",
+      "width": 450,
+      "height": 322,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/bjorn-antonissen-qAyjFVQKERQ-unsplash-imhwpb-uvzkxiru2an9z13.jpg",
+      "localPath": "/assets/images/bjorn-antonissen-qayjfvqkerq-unsplash-imhwpb-uvzkxiru2an9z13.jpg",
+      "mime": "image/jpeg",
+      "width": 350,
+      "height": 350,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/dane-deaner-iJ1lw8iNIy8-unsplash-imhwpb-idoqrcd3svf9qo9.jpg",
+      "localPath": "/assets/images/dane-deaner-ij1lw8iniy8-unsplash-imhwpb-idoqrcd3svf9qo9.jpg",
+      "mime": "image/jpeg",
+      "width": 350,
+      "height": 350,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/dbfec087-d51df9c1-tomwang160500026.jpg",
+      "localPath": "/assets/images/dbfec087-d51df9c1-tomwang160500026.jpg",
+      "mime": "image/jpeg",
+      "width": 450,
+      "height": 300,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/e4041d97-5b27ff32-rido160100053.jpg",
+      "localPath": "/assets/images/e4041d97-5b27ff32-rido160100053.jpg",
+      "mime": "image/jpeg",
+      "width": 450,
+      "height": 300,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/grovemade-DhZ5BpBeQEM-unsplash-imhwpb-a7dlwytddlctreh.jpg",
+      "localPath": "/assets/images/grovemade-dhz5bpbeqem-unsplash-imhwpb-a7dlwytddlctreh.jpg",
+      "mime": "image/jpeg",
+      "width": 350,
+      "height": 350,
+      "altText": "",
+      "usedOnPages": [
+        "contact-us"
+      ]
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/imagen-para-programas.png",
+      "localPath": "/assets/images/imagen-para-programas.png",
+      "mime": "image/png",
+      "width": 326,
+      "height": 154,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/ixlibrb-0.3.5q80fmjpgcropentropycstinysrgbw1600h900fitcropse6d54bc7aea6b233e6244114e49db922.jpg",
+      "localPath": "/assets/images/ixlibrb-0-3-5q80fmjpgcropentropycstinysrgbw1600h900fitcropse6d54bc7aea6b233e6244114e49db922.jpg",
+      "mime": "image/jpeg",
+      "width": 1600,
+      "height": 900,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/ixlibrb-0.3.5q80fmjpgcropentropycstinysrgbw300h300fitcrops2a6be7c6ca012580c1d4e4e62004f86f.jpg",
+      "localPath": "/assets/images/ixlibrb-0-3-5q80fmjpgcropentropycstinysrgbw300h300fitcrops2a6be7c6ca012580c1d4e4e62004f86f.jpg",
+      "mime": "image/jpeg",
+      "width": 300,
+      "height": 300,
+      "altText": "",
+      "usedOnPages": [
+        "recomendaciones"
+      ]
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/ixlibrb-0.3.5q80fmjpgcropentropycstinysrgbw300h300fitcrops4990b2038e17af4bc1234e229ea16a68.jpg",
+      "localPath": "/assets/images/ixlibrb-0-3-5q80fmjpgcropentropycstinysrgbw300h300fitcrops4990b2038e17af4bc1234e229ea16a68.jpg",
+      "mime": "image/jpeg",
+      "width": 300,
+      "height": 300,
+      "altText": "",
+      "usedOnPages": [
+        "recomendaciones"
+      ]
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/ixlibrb-0.3.5q80fmjpgcropentropycstinysrgbw300h300fitcropsbbdb3e69178fdc7cd46239ebaee60008.jpg",
+      "localPath": "/assets/images/ixlibrb-0-3-5q80fmjpgcropentropycstinysrgbw300h300fitcropsbbdb3e69178fdc7cd46239ebaee60008.jpg",
+      "mime": "image/jpeg",
+      "width": 300,
+      "height": 300,
+      "altText": "",
+      "usedOnPages": [
+        "recomendaciones"
+      ]
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/ixlibrb-0.3.5q80fmjpgcropentropycstinysrgbw300h300fitcropsbfcd5038e9e43e63745de7d627791a3c.jpg",
+      "localPath": "/assets/images/ixlibrb-0-3-5q80fmjpgcropentropycstinysrgbw300h300fitcropsbfcd5038e9e43e63745de7d627791a3c.jpg",
+      "mime": "image/jpeg",
+      "width": 300,
+      "height": 300,
+      "altText": "",
+      "usedOnPages": [
+        "recomendaciones"
+      ]
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/ixlibrb-0.3.5q80fmjpgcropentropycstinysrgbw400h250fitcrops3276e5d9e802c00ec114eb8c97a251be.jpg",
+      "localPath": "/assets/images/ixlibrb-0-3-5q80fmjpgcropentropycstinysrgbw400h250fitcrops3276e5d9e802c00ec114eb8c97a251be.jpg",
+      "mime": "image/jpeg",
+      "width": 400,
+      "height": 250,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/ixlibrb-0.3.5q80fmjpgcropentropycstinysrgbw400h250fitcropsd3b07383ff9d584d222ef4d5465718b5.jpg",
+      "localPath": "/assets/images/ixlibrb-0-3-5q80fmjpgcropentropycstinysrgbw400h250fitcropsd3b07383ff9d584d222ef4d5465718b5.jpg",
+      "mime": "image/jpeg",
+      "width": 400,
+      "height": 250,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/math.png",
+      "localPath": "/assets/images/math.png",
+      "mime": "image/png",
+      "width": 86,
+      "height": 86,
+      "altText": "",
+      "usedOnPages": [
+        "leer-mas-programacion"
+      ]
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/Metolodogia.jpg",
+      "localPath": "/assets/images/metolodogia.jpg",
+      "mime": "image/jpeg",
+      "width": 980,
+      "height": 980,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/rabie-madaci-4iwG8QD17AE-unsplash-imhwpb-qt9qkppkauukv1a.jpg",
+      "localPath": "/assets/images/rabie-madaci-4iwg8qd17ae-unsplash-imhwpb-qt9qkppkauukv1a.jpg",
+      "mime": "image/jpeg",
+      "width": 350,
+      "height": 350,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/tmp_1569fece-imhwpb-8bxwmtv8ahrx9sc.jpg",
+      "localPath": "/assets/images/tmp-1569fece-imhwpb-8bxwmtv8ahrx9sc.jpg",
+      "mime": "image/jpeg",
+      "width": 600,
+      "height": 400,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/tmp_photo-1455273869115-6aa7725e64ba-imhwpb-6dhu2vy5pebvi8x.jpg",
+      "localPath": "/assets/images/tmp-photo-1455273869115-6aa7725e64ba-imhwpb-6dhu2vy5pebvi8x.jpg",
+      "mime": "image/jpeg",
+      "width": 600,
+      "height": 400,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/tmp_qnU-UR0o5X8-imhwpb-ikhby64g25yyrcj.jpg",
+      "localPath": "/assets/images/tmp-qnu-ur0o5x8-imhwpb-ikhby64g25yyrcj.jpg",
+      "mime": "image/jpeg",
+      "width": 800,
+      "height": 900,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/tyler-nix-LPvloZJu1Pk-unsplash-1-imhwpb-rha25mrju9ev1d5.jpg",
+      "localPath": "/assets/images/tyler-nix-lpvlozju1pk-unsplash-1-imhwpb-rha25mrju9ev1d5.jpg",
+      "mime": "image/jpeg",
+      "width": 350,
+      "height": 350,
+      "altText": "",
+      "usedOnPages": []
+    },
+    {
+      "originalUrl": "https://alejandraherreros.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-02-at-7.31.16-PM.jpeg",
+      "localPath": "/assets/images/whatsapp-image-2021-03-02-at-7-31-16-pm.jpg",
+      "mime": "image/jpeg",
+      "width": 428,
+      "height": 571,
+      "altText": "",
+      "usedOnPages": [
+        "index"
+      ]
+    }
+  ],
+  "failedDownloads": [
+    {
+      "originalUrl": "https://source.unsplash.com/RYyr-k3Ysqg/1920x1080",
+      "error": "503 Service Unavailable",
+      "usedOnPages": [
+        "leer-mas-programacion"
+      ]
+    }
+  ],
+  "pageStats": [
+    {
+      "slug": "index",
+      "title": "Alejandra Herreros Bofill",
+      "chars": 850
+    },
+    {
+      "slug": "clases",
+      "title": "Clases",
+      "chars": 432
+    },
+    {
+      "slug": "trayectoria",
+      "title": "Trayectoria",
+      "chars": 125
+    },
+    {
+      "slug": "recomendaciones",
+      "title": "Recomendaciones",
+      "chars": 1287
+    },
+    {
+      "slug": "contact-us",
+      "title": "Contacto para clases particulares de Física, Educación Media",
+      "chars": 436
+    },
+    {
+      "slug": "leer-mas-programacion",
+      "title": "Leer más-programación",
+      "chars": 1431
+    }
+  ]
+}
