@@ -1,5 +1,32 @@
-{# Site footer — implemented by Track B.
-   Render copyright with {% year %}, nav links, and contact CTA as desired. #}
 <footer class="site-footer">
-  <p>&copy; {% year %} {{ site.name }}</p>
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <a class="brand brand--footer" href="/" aria-label="{{ site.name }} — inicio">
+        <span class="brand__mark" aria-hidden="true">AH</span>
+        <span class="brand__text">
+          <span class="brand__name">{{ site.shortName }}</span>
+          <span class="brand__tagline">{{ site.tagline }}</span>
+        </span>
+      </a>
+      <p>{{ site.description }}</p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Navegación secundaria">
+      <h2>Secciones</h2>
+      <ul>
+        {% for item in site.nav %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="site-footer__cta">
+      <h2>¿Coordinamos una clase?</h2>
+      <p>Cuéntame qué necesitas reforzar y armamos un plan claro.</p>
+      <a class="button button--secondary" href="/contact-us/">Contacto</a>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>&copy; {% year %} {{ site.name }}</p>
+  </div>
 </footer>

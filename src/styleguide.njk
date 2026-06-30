@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+title: Guía de estilo
+permalink: /styleguide/
+eleventyExcludeFromCollections: true
+---
+{% import "partials/macros.njk" as ui %}
+
+{{ ui.hero(
+  "Profesora particular PUC",
+  "Alejandra Herreros Bofill",
+  "Clases de Física y Matemática con una metodología cálida, clara y enfocada en que cada estudiante recupere confianza.",
+  "Pontificia Universidad Católica de Chile (PUC)",
+  "25 años de experiencia",
+  "/clases/",
+  "Ver clases",
+  "/contact-us/",
+  "Contacto"
+) }}
+
+{% call ui.section("componentes", "Sistema visual", "Componentes base", "Piezas reutilizables para componer las páginas reales sin JavaScript, con foco en lectura, confianza y accesibilidad.") %}
+  {% call ui.cardGrid("3") %}
+    {{ ui.featureCard("∑", "Clases grupales o individuales", "Acompañamiento flexible para reforzar contenidos, preparar pruebas y ordenar hábitos de estudio.", "/clases/", "Conocer formatos") }}
+    {{ ui.featureCard("↗", "Preparación PDT", "Plan de práctica progresiva para transformar dudas frecuentes en estrategias concretas de resolución.", "/clases/", "Ver preparación") }}
+    {{ ui.featureCard("✓", "Seguimiento cercano", "Metas claras, explicación paso a paso y comunicación simple para estudiantes y familias.") }}
+  {% endcall %}
+{% endcall %}
+
+{% call ui.section("prosa", "Contenido", "Sección de trayectoria", "Un bloque de lectura para biografía, experiencia docente o explicación metodológica.", "alt") %}
+  <div class="prose">
+    <p class="lead">Soy profesora de Física y Matemática, titulada en la Pontificia Universidad Católica de Chile, con más de 25 años dedicada a la enseñanza escolar.</p>
+    <p>Mi enfoque combina rigor académico con un trato cercano: primero identificamos dónde está la dificultad, luego construimos una ruta de trabajo con ejercicios, conversación y retroalimentación constante.</p>
+    <ul class="highlight-list">
+      <li>Preparación para evaluaciones, pruebas de admisión y nivelación.</li>
+      <li>Clases individuales o grupales según objetivos y disponibilidad.</li>
+      <li>Material de apoyo pensado para estudiar con autonomía.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call ui.section("testimonios", "Recomendaciones", "Testimonios", "Tarjetas de cita para estudiantes y apoderados.") %}
+  {% call ui.cardGrid("3") %}
+    {{ ui.testimonial("Alejandra explica con una paciencia enorme. Mi hija volvió a sentirse capaz en matemática.", "María José", "Apoderada de 2º medio") }}
+    {{ ui.testimonial("Las clases me ayudaron a ordenar fórmulas y entender qué hacer frente a cada ejercicio.", "Tomás", "Estudiante PDT") }}
+    {{ ui.testimonial("Muy responsable, clara y comprometida. Siempre hubo seguimiento después de cada clase.", "Carolina", "Apoderada") }}
+  {% endcall %}
+{% endcall %}
+
+{% call ui.section("botones", "Interacción", "Botones y enlaces", "Variantes para llamados principales, secundarios y sobre fondos oscuros.", "alt") %}
+  <div class="button-row">
+    {{ ui.button("Primario", "/contact-us/", "primary") }}
+    {{ ui.button("Secundario", "/clases/", "secondary") }}
+    <a class="text-link" href="/leer-mas-programacion/">Leer más</a>
+  </div>
+{% endcall %}
+
+{{ ui.cta(
+  "Conversemos sobre tus objetivos",
+  "Escríbeme para coordinar disponibilidad, modalidad y el contenido que necesitas reforzar.",
+  "/contact-us/",
+  "Agendar contacto",
+  "/trayectoria/",
+  "Ver trayectoria"
+) }}

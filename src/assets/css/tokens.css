@@ -69,3 +69,18 @@
   /* Motion */
   --transition: 180ms ease;
 }
+
+:root {
+  /* Track B extensions: warm academic neutrals and component sizing. */
+  --color-cream: #fbf7ef;
+  --color-cream-strong: #f4ead8;
+  --color-gold: #c48a2c;
+  --color-gold-dark: #8f611b;
+  --color-success-soft: #eaf7ee;
+  --header-height: 76px;
+  --container-padding: clamp(1rem, 3vw, 2rem);
+  --text-fluid-hero: clamp(2.75rem, 10vw, 6.75rem);
+  --text-fluid-display: clamp(2rem, 6vw, 4.5rem);
+  --text-fluid-section: clamp(1.9rem, 4vw, 3rem);
+  --shadow-blue: 0 24px 60px rgba(51, 122, 183, 0.18);
+}
