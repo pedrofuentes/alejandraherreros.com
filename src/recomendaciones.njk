@@ -5,20 +5,17 @@ description: Recomendaciones de estudiantes y apoderados sobre las clases partic
 ---
 {% import "partials/macros.njk" as ui %}
 
-{% call ui.section("recomendaciones", "Recomendaciones", "Lo que dicen mis estudiantes", "Estoy reuniendo las recomendaciones de estudiantes y apoderados con quienes he trabajado a lo largo de estos años. Pronto encontrarás aquí sus testimonios.") %}
+{% call ui.section("Recomendaciones", "Lo que dicen mis estudiantes", "Estoy reuniendo las recomendaciones de estudiantes y apoderados con quienes he trabajado a lo largo de estos años. Pronto encontrarás aquí sus testimonios.") %}
   <div class="prose">
     <p>Si hiciste clases conmigo y te gustaría compartir tu experiencia, me encantaría leer tu recomendación. Tu testimonio ayuda a otras y otros estudiantes a dar el primer paso.</p>
-  </div>
-  <div class="button-row">
-    {{ ui.button("Dejar mi recomendación", "/contact-us/", "primary") }}
+    <p>{{ ui.linkUnderline("Dejar mi recomendación", "/contact-us/") | trim }}</p>
   </div>
 {% endcall %}
 
 {{ ui.cta(
   "¿Quieres empezar tus clases?",
-  "Conversemos sobre tus objetivos en Física o Matemática y encontremos la modalidad que mejor se ajuste a ti.",
-  "/contact-us/",
-  "Escríbeme",
-  "/clases/",
-  "Ver clases"
+  "Conversemos sobre tus objetivos",
+  "Encontremos juntos la modalidad de Física o Matemática que mejor se ajuste a ti.",
+  "/contact-us/", "Escríbeme",
+  "/clases/", "Ver clases"
 ) }}

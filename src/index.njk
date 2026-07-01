@@ -5,30 +5,30 @@ description: Clases particulares de Física y Matemática en Chile con Alejandra
 {% import "partials/macros.njk" as ui %}
 
 {{ ui.hero(
-  "Profesora particular · PUC",
-  "Alejandra Herreros Bofill",
+  "Profesora particular · Física y Matemática",
+  'Alejandra Herreros <span class="accent">Bofill</span>',
   "Clases particulares de Física y Matemática que se ajustan a tus metas, tu estilo de aprendizaje y tu horario.",
-  "Pontificia Universidad Católica de Chile",
-  "25 años de experiencia",
-  "/clases/",
-  "Ver clases",
-  "/contact-us/",
-  "Contacto"
+  ["25 años de experiencia", "Formación PUC", "Online, individual o grupal"],
+  "/clases/", "Ver clases",
+  "/contact-us/", "Contacto",
+  "/assets/images/whatsapp-image-2021-03-02-at-7-31-16-pm.jpg",
+  "Alejandra Herreros Bofill, profesora de Física y Matemática",
+  "Alejandra Herreros · PUC",
+  "F = m · a"
 ) }}
 
-{% call ui.section("como-ayudo", "Cómo te puedo ayudar", "Clases pensadas para ti", "Tengo 25 años de experiencia como profesora de Física de Educación Media. Juntos identificamos dónde está la dificultad y construimos una ruta de trabajo clara para que avances con confianza.") %}
+{% call ui.section("01 · Cómo te ayudo", "Clases pensadas para ti", "Tengo 25 años de experiencia como profesora de Física de Educación Media. Juntos identificamos dónde está la dificultad y construimos una ruta de trabajo clara para que avances con confianza.") %}
   {% call ui.cardGrid("3") %}
-    {{ ui.featureCard("∑", "Clases grupales o individuales", "Si quieres mejorar tus notas, profundizar en Física o Matemática o prepararte para exámenes libres, adaptamos las clases a tu ritmo.", "/clases/", "Conocer formatos") }}
-    {{ ui.featureCard("↗", "Preparación PDT", "Te acompaño desde cero en tu preparación para la Prueba de Transición o para subir tu puntaje en Física y Matemática.", "/clases/", "Ver preparación") }}
-    {{ ui.featureCard("✓", "Reforzamiento escolar", "Clases particulares de Matemática y Física para estudiantes de 7° básico a IV° medio, con seguimiento y material de apoyo.", "/leer-mas-programacion/", "Ver programa") }}
+    {{ ui.ficha("01 · Clases", "Grupales o individuales", "Si quieres mejorar tus notas, profundizar en Física o Matemática o preparar exámenes libres, adaptamos las clases a tu ritmo.", "/clases/", "Conocer formatos") }}
+    {{ ui.ficha("02 · PDT", "Preparación PDT", "Te acompaño desde cero en tu preparación para la Prueba de Transición o para subir tu puntaje en Física y Matemática.", "/clases/", "Ver preparación") }}
+    {{ ui.ficha("03 · Escolar", "Reforzamiento 7° a IV° medio", "Clases particulares de Matemática y Física con seguimiento cercano, material de apoyo e informe de avance.", "/leer-mas-programacion/", "Ver programa") }}
   {% endcall %}
 {% endcall %}
 
 {{ ui.cta(
+  "Próximo paso",
   "Conversemos sobre tus objetivos",
   "Escríbeme para coordinar disponibilidad, modalidad y los contenidos que necesitas reforzar.",
-  "/contact-us/",
-  "Escríbeme",
-  "/trayectoria/",
-  "Conoce mi trayectoria"
+  "/contact-us/", "Escríbeme",
+  "/trayectoria/", "Conoce mi trayectoria"
 ) }}

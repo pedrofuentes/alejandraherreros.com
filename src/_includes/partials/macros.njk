@@ -1,118 +1,128 @@
 {#
-  button(label, url, variant='primary', extraClass='', attrs='')
-  Renders a styled link button. Variants: primary, secondary, ghost.
+  Editorial component macros — "cuaderno científico".
+  Helpers (button, linkUnderline) are defined first so other macros can call them.
 #}
-{% macro button(label, url, variant='primary', extraClass='', attrs='') %}
-  <a class="button button--{{ variant }}{% if extraClass %} {{ extraClass }}{% endif %}" href="{{ url }}"{% if attrs %} {{ attrs | safe }}{% endif %}>{{ label }}</a>
+
+{#  button(label, url, variant='primary')  variants: primary | ghost | on-ink  #}
+{% macro button(label, url, variant='primary') %}
+{%- set cls = 'btn' -%}
+{%- if variant == 'ghost' -%}{% set cls = 'btn btn--ghost' %}{%- elif variant == 'on-ink' -%}{% set cls = 'btn btn--on-ink' %}{%- endif -%}
+<a class="{{ cls }}" href="{{ url }}">{{ label }}</a>
+{% endmacro %}
+
+{#  linkUnderline(label, url) — editorial underlined mono link with arrow  #}
+{% macro linkUnderline(label, url) %}
+<a class="link-underline" href="{{ url }}">{{ label }}</a>
 {% endmacro %}
 
 {#
-  hero(kicker, title, subtitle, credential='', meta='', primaryUrl='', primaryLabel='', secondaryUrl='', secondaryLabel='')
-  Large landing hero with eyebrow/kicker, title, supporting copy, optional credential/meta chips, and two CTAs.
+  hero(eyebrow, title, lead, meta, primaryUrl, primaryLabel, secondaryUrl, secondaryLabel,
+       portrait, portraitAlt, caption, equation)
+  Editorial home hero: mono kicker, Fraunces headline (title may contain <span class="accent">),
+  Newsreader lead, mono meta list, ink+ghost CTAs, and a real portrait framed on graph paper.
 #}
-{% macro hero(kicker, title, subtitle, credential='', meta='', primaryUrl='', primaryLabel='', secondaryUrl='', secondaryLabel='') %}
-  <section class="hero section section--hero" aria-labelledby="hero-title">
-    <div class="container hero__grid">
-      <div class="hero__content">
-        {% if kicker %}<p class="eyebrow">{{ kicker }}</p>{% endif %}
-        <h1 id="hero-title">{{ title }}</h1>
-        {% if subtitle %}<p class="hero__subtitle">{{ subtitle }}</p>{% endif %}
-        {% if credential or meta %}
-          <ul class="hero__badges" aria-label="Datos destacados">
-            {% if credential %}<li>{{ credential }}</li>{% endif %}
-            {% if meta %}<li>{{ meta }}</li>{% endif %}
-          </ul>
-        {% endif %}
-        {% if primaryUrl or secondaryUrl %}
-          <div class="button-row">
-            {% if primaryUrl and primaryLabel %}{{ button(primaryLabel, primaryUrl, 'primary') }}{% endif %}
-            {% if secondaryUrl and secondaryLabel %}{{ button(secondaryLabel, secondaryUrl, 'secondary') }}{% endif %}
-          </div>
-        {% endif %}
-      </div>
-      <div class="hero__panel" aria-hidden="true">
-        <div class="formula-card formula-card--top">F = m · a</div>
-        <div class="hero__portrait-mark">AH</div>
-        <div class="formula-card formula-card--bottom">x² + y²</div>
-      </div>
-    </div>
-  </section>
-{% endmacro %}
-
-{#
-  section(id='', kicker='', title='', intro='', variant='default') ... endcall
-  Wraps page sections with optional id, eyebrow, heading, intro, and arbitrary caller content.
-#}
-{% macro section(id='', kicker='', title='', intro='', variant='default') %}
-  <section class="section section--{{ variant }}"{% if id %} id="{{ id }}"{% endif %}>
-    <div class="container">
-      {% if kicker or title or intro %}
-        <div class="section__header">
-          {% if kicker %}<p class="eyebrow">{{ kicker }}</p>{% endif %}
-          {% if title %}<h2>{{ title }}</h2>{% endif %}
-          {% if intro %}<p class="section__intro">{{ intro }}</p>{% endif %}
-        </div>
+{% macro hero(eyebrow, title, lead, meta, primaryUrl, primaryLabel, secondaryUrl, secondaryLabel, portrait, portraitAlt, caption, equation) %}
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <p class="label hero__eyebrow label--plain reveal reveal--1">{{ eyebrow }}</p>
+      <h1 class="hero__title reveal reveal--1">{{ title | safe }}</h1>
+      <p class="hero__lead reveal reveal--2">{{ lead }}</p>
+      {% if meta %}
+        <ul class="hero__meta reveal reveal--2">
+          {% for m in meta %}<li>{{ m }}</li>{% endfor %}
+        </ul>
       {% endif %}
-      {{ caller() }}
+      <div class="button-row reveal reveal--3">
+        {% if primaryUrl %}{{ button(primaryLabel, primaryUrl, 'primary') | trim }}{% endif %}
+        {% if secondaryUrl %}{{ button(secondaryLabel, secondaryUrl, 'ghost') | trim }}{% endif %}
+      </div>
     </div>
-  </section>
+    <figure class="hero__figure reveal reveal--3">
+      {% if equation %}<span class="hero__equation" aria-hidden="true">{{ equation }}</span>{% endif %}
+      <img class="hero__portrait" src="{{ portrait }}" alt="{{ portraitAlt }}" width="480" height="640" fetchpriority="high" />
+      {% if caption %}<figcaption class="hero__caption"><span class="tick" aria-hidden="true">●</span>{{ caption }}</figcaption>{% endif %}
+    </figure>
+  </div>
+</section>
 {% endmacro %}
 
 {#
-  cardGrid(columns='3') ... endcall
-  Responsive grid wrapper. columns accepts 2, 3, or auto.
+  section(label, title, intro, variant='default') ... endcall
+  General editorial section: mono label, Fraunces title, lead intro, then caller content.
+  variant 'tint' adds a warm ruled band.
 #}
-{% macro cardGrid(columns='3') %}
-  <div class="card-grid card-grid--{{ columns }}">
+{% macro section(label, title, intro, variant='default') %}
+<section class="section{% if variant != 'default' %} section--{{ variant }}{% endif %}">
+  <div class="container">
+    {% if label or title or intro %}
+      <div class="section__header">
+        {% if label %}<p class="label">{{ label }}</p>{% endif %}
+        {% if title %}<h2 class="section__title">{{ title }}</h2>{% endif %}
+        {% if intro %}<p class="section__intro">{{ intro }}</p>{% endif %}
+      </div>
+    {% endif %}
     {{ caller() }}
   </div>
+</section>
 {% endmacro %}
 
-{#
-  featureCard(icon, title, text, url='', label='Leer más')
-  Feature/service card with decorative icon, title, body text, and optional link.
-#}
-{% macro featureCard(icon, title, text, url='', label='Leer más') %}
-  <article class="card feature-card">
-    {% if icon %}<div class="card__icon" aria-hidden="true">{{ icon }}</div>{% endif %}
+{#  cardGrid(columns='3') ... endcall — responsive grid (2 or 3)  #}
+{% macro cardGrid(columns='3') %}
+<div class="card-grid card-grid--{{ columns }}">
+  {{ caller() }}
+</div>
+{% endmacro %}
+
+{#  ficha(label, title, text, url='', linkLabel='Leer más') — index-card style feature  #}
+{% macro ficha(label, title, text, url='', linkLabel='Leer más') %}
+<article class="ficha">
+  {% if label %}<p class="ficha__label">{{ label }}</p>{% endif %}
+  <h3 class="ficha__title">{{ title }}</h3>
+  <p class="ficha__text">{{ text }}</p>
+  {% if url %}<p class="ficha__link">{{ linkUnderline(linkLabel, url) | trim }}</p>{% endif %}
+</article>
+{% endmacro %}
+
+{#  programCard(title, count, items) — PDT program "ficha" with a ruled list  #}
+{% macro programCard(title, count, items) %}
+<article class="program-card">
+  <div class="program-card__head">
     <h3>{{ title }}</h3>
-    <p>{{ text }}</p>
-    {% if url %}<a class="text-link" href="{{ url }}">{{ label }}</a>{% endif %}
-  </article>
+    <span class="program-card__count">{{ count }}</span>
+  </div>
+  <ul>
+    {% for it in items %}<li>{{ it | safe }}</li>{% endfor %}
+  </ul>
+</article>
+{% endmacro %}
+
+{#  quote(text, author, role='') — testimonial card  #}
+{% macro quote(text, author, role='') %}
+<figure class="quote">
+  <blockquote>{{ text }}</blockquote>
+  <figcaption><strong>{{ author }}</strong>{% if role %} · {{ role }}{% endif %}</figcaption>
+</figure>
 {% endmacro %}
 
 {#
-  testimonial(quote, author, role='')
-  Quote card for student/parent recommendations.
+  cta(note, title, text, primaryUrl, primaryLabel, secondaryUrl='', secondaryLabel='')
+  Ink block on graph paper with an ochre button.
 #}
-{% macro testimonial(quote, author, role='') %}
-  <figure class="card testimonial-card">
-    <blockquote>“{{ quote }}”</blockquote>
-    <figcaption>
-      <strong>{{ author }}</strong>
-      {% if role %}<span>{{ role }}</span>{% endif %}
-    </figcaption>
-  </figure>
-{% endmacro %}
-
-{#
-  cta(title, text, primaryUrl, primaryLabel, secondaryUrl='', secondaryLabel='')
-  Full-width call-to-action band with one or two buttons.
-#}
-{% macro cta(title, text, primaryUrl, primaryLabel, secondaryUrl='', secondaryLabel='') %}
-  <section class="section section--cta" aria-labelledby="cta-title">
-    <div class="container">
-      <div class="cta-band">
-        <div>
-          <p class="eyebrow">Próximo paso</p>
-          <h2 id="cta-title">{{ title }}</h2>
-          <p>{{ text }}</p>
-        </div>
-        <div class="button-row">
-          {{ button(primaryLabel, primaryUrl, 'primary') }}
-          {% if secondaryUrl and secondaryLabel %}{{ button(secondaryLabel, secondaryUrl, 'ghost') }}{% endif %}
-        </div>
+{% macro cta(note, title, text, primaryUrl, primaryLabel, secondaryUrl='', secondaryLabel='') %}
+<section class="cta">
+  <div class="container">
+    <div class="cta__panel">
+      <div>
+        {% if note %}<p class="cta__note">{{ note }}</p>{% endif %}
+        <h2 class="cta__title">{{ title }}</h2>
+        <p class="cta__text">{{ text }}</p>
+      </div>
+      <div class="button-row">
+        {{ button(primaryLabel, primaryUrl, 'on-ink') | trim }}
+        {% if secondaryUrl %}{{ button(secondaryLabel, secondaryUrl, 'ghost') | trim }}{% endif %}
       </div>
     </div>
-  </section>
+  </div>
+</section>
 {% endmacro %}

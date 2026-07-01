@@ -1,48 +1,72 @@
 /*
- * Design tokens for alejandraherreros.com
- * Single source of truth for color, type, spacing. Tracks B and D build on these.
- * Palette derived from the current site: blue #337AB7, ink #333, paper #fff.
+ * Design tokens for alejandraherreros.com — "cuaderno científico / editorial académico"
+ * Warm paper + Prussian ink-blue + ochre accent. Type: Fraunces / Newsreader / IBM Plex Mono.
+ * Single source of truth for color, type, spacing. styles.css + component CSS build on these.
  */
 :root {
-  /* Brand palette */
-  --color-blue: #337ab7;
-  --color-blue-dark: #285f8f;
-  --color-blue-darker: #1f4b73;
-  --color-blue-50: #eaf2f9;
-  --color-blue-100: #d6e6f3;
-  --color-ink: #333333;
-  --color-ink-soft: #555b62;
-  --color-paper: #ffffff;
-  --color-muted: #6b7280;
-  --color-border: #e4e8ec;
-  --color-bg-subtle: #f6f8fa;
+  /* Paper & ink */
+  --paper: #f4eede;            /* page background — warm cream */
+  --paper-raised: #fbf7ee;     /* cards / raised surfaces */
+  --paper-deep: #ece3cf;       /* subtle inset panels */
+  --ink: #1b2230;             /* headings / near-black warm navy */
+  --ink-body: #2c3340;         /* body text */
+  --ink-soft: #4f5666;         /* secondary text */
+  --ink-muted: #79736a;        /* captions / warm muted */
+
+  /* Prussian blue (deep evolution of the old #337AB7) */
+  --blue: #123c5a;
+  --blue-mid: #1f567f;
+  --blue-deep: #0c2c42;
+  --blue-tint: #e0e8ef;
+  --blue-line: rgba(18, 60, 90, 0.11);   /* graph-paper lines */
+  --blue-line-strong: rgba(18, 60, 90, 0.22);
+
+  /* Ochre / mustard accent — "tiza" */
+  --ochre: #b0761a;
+  --ochre-bright: #c98d22;
+  --ochre-deep: #8f5e12;
+  --ochre-wash: rgba(176, 118, 26, 0.14);
+  --ochre-tint: #ecdcbb;
+
+  /* Rules & borders (warm) */
+  --rule: #ddd1b8;
+  --rule-strong: #c7b795;
+  --rule-ink: rgba(27, 34, 48, 0.16);
 
   /* Semantic aliases */
-  --color-text: var(--color-ink);
-  --color-heading: #20232a;
-  --color-primary: var(--color-blue);
-  --color-primary-hover: var(--color-blue-dark);
-  --color-primary-contrast: #ffffff;
-  --color-link: var(--color-blue-dark);
-  --color-link-hover: var(--color-blue-darker);
+  --color-text: var(--ink-body);
+  --color-heading: var(--ink);
+  --color-primary: var(--blue);
+  --color-primary-hover: var(--blue-deep);
+  --color-primary-contrast: #fbf7ee;
+  --color-accent: var(--ochre);
+  --color-link: var(--blue-mid);
+  --color-link-hover: var(--blue-deep);
 
   /* Typography */
-  --font-heading: "Oswald", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-body: "Roboto", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Fluid type scale */
+  --text-hero: clamp(2.9rem, 1.6rem + 5.6vw, 5.25rem);
+  --text-display: clamp(2.3rem, 1.4rem + 3.6vw, 3.6rem);
+  --text-section: clamp(1.85rem, 1.3rem + 2.2vw, 2.85rem);
+  --text-h3: clamp(1.3rem, 1.05rem + 1vw, 1.7rem);
+  --text-lead: clamp(1.2rem, 1.05rem + 0.7vw, 1.5rem);
+  --text-base: 1.1875rem;
+  --text-sm: 0.975rem;
   --text-xs: 0.8125rem;
-  --text-sm: 0.9375rem;
-  --text-base: 1.0625rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 2rem;
-  --text-3xl: 2.75rem;
-  --text-4xl: 3.5rem;
-  --leading-tight: 1.15;
-  --leading-normal: 1.65;
-  --tracking-heading: 0.01em;
-  --weight-body: 400;
+  --text-mono: 0.78rem;
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.22;
+  --leading-normal: 1.66;
+  --tracking-mono: 0.14em;
+  --weight-body: 420;
   --weight-medium: 500;
-  --weight-heading: 600;
+  --weight-display: 600;
+  --weight-display-bold: 700;
 
   /* Spacing scale */
   --space-1: 0.25rem;
@@ -56,31 +80,27 @@
   --space-9: 6rem;
 
   /* Layout */
-  --container-max: 1120px;
-  --container-narrow: 760px;
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.1);
-  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08);
-  --shadow-lg: 0 18px 40px rgba(16, 24, 40, 0.14);
-  --ring: 0 0 0 3px rgba(51, 122, 183, 0.35);
+  --container-max: 1140px;
+  --container-narrow: 720px;
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+  --header-height: 5rem;
 
-  /* Motion */
-  --transition: 180ms ease;
-}
+  /* Radii — restrained, print-like (no pills) */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
 
-:root {
-  /* Track B extensions: warm academic neutrals and component sizing. */
-  --color-cream: #fbf7ef;
-  --color-cream-strong: #f4ead8;
-  --color-gold: #c48a2c;
-  --color-gold-dark: #8f611b;
-  --color-success-soft: #eaf7ee;
-  --header-height: 76px;
-  --container-padding: clamp(1rem, 3vw, 2rem);
-  --text-fluid-hero: clamp(2.75rem, 10vw, 6.75rem);
-  --text-fluid-display: clamp(2rem, 6vw, 4.5rem);
-  --text-fluid-section: clamp(1.9rem, 4vw, 3rem);
-  --shadow-blue: 0 24px 60px rgba(51, 122, 183, 0.18);
+  /* Shadows — soft, warm, paper-like */
+  --shadow-sm: 0 1px 2px rgba(27, 34, 48, 0.05), 0 1px 1px rgba(27, 34, 48, 0.04);
+  --shadow-md: 0 10px 24px -12px rgba(27, 34, 48, 0.28);
+  --shadow-lg: 0 26px 50px -22px rgba(12, 44, 66, 0.4);
+  --ring: 0 0 0 3px rgba(176, 118, 26, 0.4);
+
+  /* Graph-paper background image (used deliberately in specific zones) */
+  --grid-size: 26px;
+  --grid-paper:
+    linear-gradient(var(--blue-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blue-line) 1px, transparent 1px);
+
+  --transition: 170ms ease;
 }

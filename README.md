@@ -10,7 +10,7 @@ Sitio web de **Alejandra Herreros Bofill**, profesora particular de **Física y 
 
 - **Eleventy (11ty) v3** — generador de sitios estáticos (Nunjucks + Markdown)
 - **Cero JavaScript** en el sitio público (solo una mejora progresiva opcional en el formulario)
-- **CSS propio** con tokens de diseño; fuentes **Oswald + Roboto** self-hosted
+- **CSS propio** con tokens de diseño; fuentes **Fraunces + Newsreader + IBM Plex Mono** self-hosted
 - **GitHub Pages + GitHub Actions** para build y deploy (acciones fijadas por SHA)
 - **Web3Forms** para el formulario de contacto (sin backend)
 
@@ -28,7 +28,7 @@ src/
     layouts/base.njk            Shell HTML (head/SEO, header, footer)
     partials/                   header, footer, seo-head, contact-form y macros (componentes)
   assets/css/                   tokens.css, styles.css, contact-form.css
-  assets/fonts/                 Oswald + Roboto (woff2, self-hosted)
+  assets/fonts/                 Fraunces + Newsreader + IBM Plex Mono (woff2, self-hosted)
   assets/images/                imágenes del sitio
   assets/og-default.jpg         imagen para redes sociales (Open Graph)
   *.njk                         una página por URL
@@ -125,7 +125,7 @@ El formulario usa **Web3Forms**. Mientras no haya clave configurada, la página 
 Reconstrucción del sitio WordPress (tema BoldGrid/Crio) como sitio estático:
 
 - **Migración** del contenido y las imágenes desde el sitio original con `scripts/migrate-wordpress.mjs` (`npm run migrate`, uso único/legacy).
-- **Diseño limpio** propio, conservando la marca (azul `#337AB7`, tipografías Oswald/Roboto) y **todos los slugs** originales para no romper el SEO.
+- **Diseño editorial "cuaderno científico"** propio (papel cálido + azul Prusia + acento ocre; tipografías Fraunces/Newsreader/IBM Plex Mono), conservando **todos los slugs** originales para no romper el SEO.
 - **Contenido honesto:** se conservan los textos reales; las recomendaciones del sitio antiguo eran texto de relleno (lorem ipsum), por lo que la página de Recomendaciones queda como invitación a dejar testimonios reales, sin inventar reseñas.
 - **SEO:** `sitemap.xml`, `robots.txt`, canonical, Open Graph/Twitter con imagen social (`assets/og-default.jpg`), favicons y página 404 propia.
 

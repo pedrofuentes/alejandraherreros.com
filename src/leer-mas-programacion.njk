@@ -5,62 +5,43 @@ description: "Programas de clases de Física y Matemática: reforzamiento de 7°
 ---
 {% import "partials/macros.njk" as ui %}
 
-{% call ui.section("pdt", "Preparación PDT", "Programa de preparación", "Plan de práctica progresiva para la Prueba de Transición en Matemática y Física, con clases interactivas online, ensayos y retroalimentación inmediata.") %}
+{% call ui.section("Preparación PDT", "Programa de preparación", "Plan de práctica progresiva para la Prueba de Transición en Matemática y Física, con clases interactivas online, ensayos y retroalimentación inmediata.") %}
   {% call ui.cardGrid("3") %}
-    <article class="card">
-      <h3>Matemática</h3>
-      <ul>
-        <li><strong>60 clases</strong> de 60 min c/u</li>
-        <li>Clases interactivas online</li>
-        <li>Individuales o grupales (máx. 4 al.)</li>
-        <li>Ensayos online y retroalimentación inmediata</li>
-        <li>Más de <strong>1000 ejercicios</strong></li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Física · Común</h3>
-      <ul>
-        <li><strong>34 clases</strong> de 60 min c/u</li>
-        <li>Clases interactivas online</li>
-        <li>Individuales o grupales (máx. 4 al.)</li>
-        <li>Ensayos online y retroalimentación inmediata</li>
-        <li>Más de <strong>600 ejercicios</strong></li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Física · Mención</h3>
-      <ul>
-        <li><strong>44 clases</strong> de 60 min c/u</li>
-        <li>Clases interactivas online</li>
-        <li>Individuales o grupales (máx. 4 al.)</li>
-        <li>Ensayos online y retroalimentación inmediata</li>
-        <li>Más de <strong>1000 ejercicios</strong></li>
-      </ul>
-    </article>
+    {{ ui.programCard("Matemática", "60 clases · 60 min", [
+      "Clases interactivas online",
+      "Individuales o grupales (máx. 4 al.)",
+      "Ensayos online y retroalimentación inmediata",
+      "Informe de avance mensual al apoderado",
+      "Más de <strong>1000 ejercicios</strong>"
+    ]) }}
+    {{ ui.programCard("Física · Común", "34 clases · 60 min", [
+      "Clases interactivas online",
+      "Individuales o grupales (máx. 4 al.)",
+      "Ensayos online y retroalimentación inmediata",
+      "Informe de avance mensual al apoderado",
+      "Más de <strong>600 ejercicios</strong>"
+    ]) }}
+    {{ ui.programCard("Física · Mención", "44 clases · 60 min", [
+      "Clases interactivas online",
+      "Individuales o grupales (máx. 4 al.)",
+      "Ensayos online y retroalimentación inmediata",
+      "Informe de avance mensual al apoderado",
+      "Más de <strong>1000 ejercicios</strong>"
+    ]) }}
   {% endcall %}
 {% endcall %}
 
-{% call ui.section("incluye", "Cada programa incluye", "Acompañamiento de principio a fin", "", "alt") %}
-  <ul class="highlight-list">
-    <li>Clases interactivas online, individuales o grupales (máximo 4 estudiantes).</li>
-    <li>Ensayos online para practicar en condiciones reales.</li>
-    <li>Retroalimentación inmediata en cada clase.</li>
-    <li>Informe de avance mensual al apoderado.</li>
-  </ul>
-{% endcall %}
-
-{% call ui.section("reforzamiento", "Clases particulares y reforzamiento", "Para todo el año escolar", "Apoyo en contenidos, pruebas y nivelación durante el año.") %}
+{% call ui.section("Clases particulares y reforzamiento", "Para todo el año escolar", "Apoyo en contenidos, pruebas y nivelación durante el año, para estudiantes de 7° básico a IV° medio.", "tint") %}
   {% call ui.cardGrid("2") %}
-    {{ ui.featureCard("∑", "Matemática", "Reforzamiento para estudiantes de 7° básico a IV° medio.") }}
-    {{ ui.featureCard("Φ", "Física", "Reforzamiento para estudiantes de 7° básico a IV° medio.") }}
+    {{ ui.ficha("Matemática", "7° básico a IV° medio", "Reforzamiento de contenidos, resolución de ejercicios y preparación de pruebas a tu ritmo.") }}
+    {{ ui.ficha("Física", "7° básico a IV° medio", "Comprensión de conceptos, práctica guiada y acompañamiento cercano en cada unidad.") }}
   {% endcall %}
 {% endcall %}
 
 {{ ui.cta(
-  "Consulta los valores",
-  "Escríbeme para conocer los valores y la disponibilidad de cada programa.",
-  "/contact-us/",
-  "Ir a contacto",
-  "/clases/",
-  "Volver a clases"
+  "Valores y disponibilidad",
+  "Consulta los valores de cada programa",
+  "Escríbeme para conocer los valores y la disponibilidad, y coordinar la modalidad ideal para ti.",
+  "/contact-us/", "Ir a contacto",
+  "/clases/", "Volver a clases"
 ) }}

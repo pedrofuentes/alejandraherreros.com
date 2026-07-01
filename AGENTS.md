@@ -28,7 +28,7 @@ src/_data/site.json
   Datos compartidos del sitio: name, shortName, tagline, lang/locale, url, description, author, credentials, contact.email, contact.web3formsAccessKey, nav[] y social[].
 
 src/assets/css/tokens.css
-  Tokens de diseño: colores de marca (#337AB7, #333, #fff), tipografías Oswald/Roboto, escala de espaciado, radios, sombras y aliases semánticos.
+  Tokens de diseño: paleta "cuaderno científico" (papel cálido #f4eede, azul Prusia #123c5a, acento ocre #b0761a), tipografías Fraunces/Newsreader/IBM Plex Mono, escala de espaciado, radios, sombras y aliases semánticos.
 
 src/assets/css/styles.css
   Estilos principales del sitio. Usa los tokens de tokens.css e incluye la base visual, tipografía, layout, header, footer, cards y botones. También es el lugar previsto para @font-face de fuentes self-hosted en src/assets/fonts/.
@@ -259,11 +259,13 @@ src/assets/images/alejandra-clases-fisica.jpg
 
 ```css
 :root {
-  --color-blue: #337ab7;
-  --color-ink: #333333;
-  --color-paper: #ffffff;
-  --font-heading: "Oswald", system-ui, sans-serif;
-  --font-body: "Roboto", system-ui, sans-serif;
+  --paper: #f4eede;        /* fondo papel cálido */
+  --blue: #123c5a;         /* azul Prusia */
+  --ochre: #b0761a;        /* acento ocre */
+  --ink: #1b2230;          /* tinta / títulos */
+  --font-display: "Fraunces", Georgia, serif;   /* títulos */
+  --font-body: "Newsreader", Georgia, serif;     /* texto */
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace; /* etiquetas / notas */
 }
 ```
 

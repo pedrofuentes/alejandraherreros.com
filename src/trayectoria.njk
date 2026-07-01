@@ -5,18 +5,18 @@ description: Trayectoria de Alejandra Herreros Bofill, profesora de Física y Ma
 ---
 {% import "partials/macros.njk" as ui %}
 
-{% call ui.section("trayectoria", "Trayectoria", "Sobre mí") %}
+{% call ui.section("Trayectoria", "Sobre mí") %}
   <div class="about-grid">
     <div class="prose">
       <p class="lead">Soy Alejandra Herreros Bofill, profesora de Física y Matemática formada en la Pontificia Universidad Católica de Chile.</p>
       <p>Tengo 25 años de experiencia haciendo clases de Física en Educación Media. En este tiempo he acompañado a muchos estudiantes a mejorar sus notas, recuperar la confianza y prepararse para sus pruebas con una metodología cercana y clara.</p>
       <p>Mi forma de trabajar combina rigor y cercanía: primero identificamos dónde está la dificultad y luego construimos juntos una ruta de trabajo con ejercicios, conversación y retroalimentación constante.</p>
-      <ul class="highlight-list">
+      <ol class="highlight-list">
         <li>Clases individuales o grupales según tus objetivos y disponibilidad.</li>
         <li>Reforzamiento de Matemática y Física de 7° básico a IV° medio.</li>
         <li>Preparación PDT, partiendo de cero o para subir tu puntaje.</li>
         <li>Informe de avance mensual y material de apoyo para estudiar con autonomía.</li>
-      </ul>
+      </ol>
     </div>
     <figure class="about-portrait">
       <img
@@ -26,15 +26,15 @@ description: Trayectoria de Alejandra Herreros Bofill, profesora de Física y Ma
         alt="Retrato de Alejandra Herreros Bofill, profesora de Física y Matemática"
         loading="lazy"
       />
+      <figcaption>Alejandra Herreros · Profesora de Física, PUC</figcaption>
     </figure>
   </div>
 {% endcall %}
 
 {{ ui.cta(
   "¿Conversamos?",
+  "Coordinemos tus clases",
   "Escríbeme para coordinar tus clases de Física o Matemática.",
-  "/contact-us/",
-  "Ir a contacto",
-  "/clases/",
-  "Ver clases"
+  "/contact-us/", "Ir a contacto",
+  "/clases/", "Ver clases"
 ) }}

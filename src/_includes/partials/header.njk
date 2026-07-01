@@ -1,10 +1,10 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="brand" href="/" aria-label="{{ site.name }} — inicio">
-      <span class="brand__mark" aria-hidden="true">AH</span>
+      <span class="brand__mark" aria-hidden="true">A<span class="dot">.</span>H</span>
       <span class="brand__text">
         <span class="brand__name">{{ site.shortName }}</span>
-        <span class="brand__tagline">Física &amp; Matemática</span>
+        <span class="brand__tagline">Física · Matemática</span>
       </span>
     </a>
 
@@ -17,11 +17,11 @@
     </nav>
 
     <details class="mobile-nav">
-      <summary aria-label="Abrir menú de navegación">
-        <span class="mobile-nav__label">Menú</span>
+      <summary aria-label="Abrir menú">
         <span class="mobile-nav__icon" aria-hidden="true"></span>
+        <span class="mobile-nav__label">Menú</span>
       </summary>
-      <nav aria-label="Principal móvil">
+      <nav aria-label="Principal">
         <ul>
           {% for item in site.nav %}
             <li><a href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
