@@ -378,14 +378,11 @@ strong, b { font-weight: 600; }
   max-width: 26rem;
 }
 .hero__figure::before {
-  /* graph-paper backdrop offset behind the photo */
+  /* graph-paper backdrop offset behind the photo — tracks the photo via insets */
   content: "";
   position: absolute;
-  inset: -1.4rem -1.4rem auto auto;
+  inset: 1.6rem -1.1rem 2rem auto;
   width: 78%;
-  aspect-ratio: 4 / 5;
-  top: 1.6rem;
-  right: -1.1rem;
   background-color: var(--paper-raised);
   background-image: var(--grid-paper);
   background-size: 18px 18px;
@@ -396,9 +393,10 @@ strong, b { font-weight: 600; }
 .hero__portrait {
   position: relative;
   z-index: 1;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   border-radius: var(--radius-sm);
   border: 0.65rem solid var(--paper-raised);
   box-shadow: var(--shadow-lg);
@@ -607,8 +605,10 @@ strong, b { font-weight: 600; }
 .about-grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
 .about-portrait { margin: 0; order: -1; position: relative; }
 .about-portrait img {
-  width: 100%;
-  max-width: 20rem;
+  display: block;
+  width: auto;
+  max-width: 22rem;
+  height: auto;
   margin-inline: auto;
   border: 0.6rem solid var(--paper-raised);
   border-radius: var(--radius-sm);
