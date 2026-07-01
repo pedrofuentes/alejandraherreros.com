@@ -207,26 +207,19 @@ strong, b { font-weight: 600; }
 
 .brand {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.6rem;
+  align-items: center;
   color: var(--ink);
   text-decoration: none;
 }
-.brand__mark {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: -0.02em;
-  color: var(--blue);
-}
-.brand__mark .dot { color: var(--ochre); }
-.brand__text { display: flex; flex-direction: column; line-height: 1.05; }
+.brand__text { display: flex; flex-direction: column; gap: 0.12rem; line-height: 1.05; }
 .brand__name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
+.brand:hover .brand__name { color: var(--blue-deep); }
 .brand__tagline {
   font-family: var(--font-mono);
   font-size: 0.62rem;
