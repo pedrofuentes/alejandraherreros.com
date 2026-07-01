@@ -383,7 +383,7 @@ strong, b { font-weight: 600; }
   position: absolute;
   inset: -1.4rem -1.4rem auto auto;
   width: 78%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   top: 1.6rem;
   right: -1.1rem;
   background-color: var(--paper-raised);
@@ -397,7 +397,7 @@ strong, b { font-weight: 600; }
   position: relative;
   z-index: 1;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: var(--radius-sm);
   border: 0.65rem solid var(--paper-raised);
