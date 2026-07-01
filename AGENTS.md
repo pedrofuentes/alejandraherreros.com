@@ -365,19 +365,12 @@ Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
 
 ## 6. Setup still required
 
-Estas tareas son de una sola vez y debe realizarlas la persona dueña del sitio o del repositorio:
+El formulario de contacto (Web3Forms) **ya está configurado** y GitHub Pages **ya está habilitado** (Source: GitHub Actions). Queda **una** tarea de una sola vez para la persona dueña del sitio:
 
-1. **Configurar contacto en `src/_data/site.json`**
-   - Reemplazar `contact.email` por el correo real de destino.
-   - Crear una key gratis en <https://web3forms.com> y ponerla en `contact.web3formsAccessKey`.
-   - Esa key es pública/client-side; no agregar secretos privados al repo.
-
-2. **Configurar DNS de `alejandraherreros.com` para GitHub Pages**
+1. **Configurar DNS de `alejandraherreros.com` para GitHub Pages**
    - Apex `alejandraherreros.com`: apuntar registros `A`/`AAAA` a las IPs oficiales de GitHub Pages.
-   - `www`: crear un `CNAME` hacia el host de GitHub Pages del repositorio.
-   - Mantener el archivo `CNAME` con `alejandraherreros.com` cuando se agregue o confirme el dominio custom.
+   - `www`: crear un `CNAME` hacia `pedrofuentes.github.io`.
+   - Mantener el archivo `CNAME` con `alejandraherreros.com` (ya está en el repo).
+   - Después, activar **Enforce HTTPS** en Settings → Pages cuando el DNS propague.
 
-3. **Habilitar GitHub Pages en el repositorio**
-   - Ir a Settings → Pages.
-   - En “Source”, seleccionar **GitHub Actions**.
-   - Confirmar que el workflow de deploy publica correctamente desde `main`.
+Ya realizado (referencia): la clave pública de Web3Forms está en `src/_data/site.json` (`contact.web3formsAccessKey`); para cambiarla o cambiar el correo de destino, edita ese campo o gestiona el correo en el panel de Web3Forms. En la página de Contacto no se muestra ningún correo público (solo el formulario).

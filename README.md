@@ -2,8 +2,7 @@
 
 Sitio web de **Alejandra Herreros Bofill**, profesora particular de **Física y Matemática** en Chile (formada en la Pontificia Universidad Católica de Chile, 25 años de experiencia). Es una **reconstrucción estática** del antiguo sitio WordPress, pensada para que el contenido se edite fácilmente (Nunjucks + JSON), se haga commit y se publique solo.
 
-- **Producción:** https://alejandraherreros.com _(en vivo una vez apuntado el DNS a GitHub Pages — ver [Setup pendiente](#setup-pendiente-una-sola-vez))_
-- **Repositorio:** https://github.com/pedrofuentes/alejandraherreros.com (público)
+- **Producción:** https://alejandraherreros.com _(en vivo una vez apuntado el DNS a GitHub Pages — ver [Setup pendiente](#setup-pendiente-una-sola-vez))_- **Repositorio:** https://github.com/pedrofuentes/alejandraherreros.com (público)
 - **Idioma del sitio:** español de Chile (`es-CL`)
 
 ## Stack
@@ -84,9 +83,9 @@ Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
 
 ## Setup pendiente (una sola vez)
 
-El sitio ya está **construido y desplegado** en GitHub Pages. Quedan dos pasos manuales que debe hacer la persona dueña del sitio. El sitio WordPress actual sigue funcionando hasta que se cambie el DNS, así que no hay interrupción.
+El sitio ya está **construido y desplegado** en GitHub Pages, y el **formulario de contacto ya está activo** (Web3Forms configurado). Queda **un** paso manual: apuntar el DNS. El sitio WordPress actual sigue funcionando hasta que se cambie el DNS, así que no hay interrupción.
 
-### 1. Apuntar el DNS a GitHub Pages
+### Apuntar el DNS a GitHub Pages
 
 El dominio custom `alejandraherreros.com` ya está configurado en GitHub. Para dejarlo en vivo, apuntar el DNS del dominio:
 
@@ -104,21 +103,9 @@ El dominio custom `alejandraherreros.com` ya está configurado en GitHub. Para d
 
 Después, en **Settings → Pages** del repositorio, activar **Enforce HTTPS** (una vez que el DNS propague).
 
-### 2. Activar el formulario de contacto
+### Formulario de contacto (ya configurado)
 
-El formulario usa **Web3Forms**. Mientras no haya clave configurada, la página de Contacto muestra un aviso con un enlace `mailto:` de respaldo. Para activarlo:
-
-1. Crear una clave gratis en https://web3forms.com (es una clave **pública** client-side; no es un secreto).
-2. En `src/_data/site.json`, completar `contact.email` (correo de destino) y `contact.web3formsAccessKey`:
-
-   ```json
-   "contact": {
-     "email": "tu-correo@dominio.cl",
-     "web3formsAccessKey": "TU_ACCESS_KEY"
-   }
-   ```
-
-3. Commit + push (se despliega solo).
+El formulario usa **Web3Forms** y la clave pública ya está en `src/_data/site.json` (`contact.web3formsAccessKey`). Las consultas llegan al correo registrado en la cuenta de Web3Forms. Para cambiar la clave o el destino, edita ese campo (es una clave **pública** client-side, no un secreto) o gestiona el correo en el panel de Web3Forms. Nota: en el plan gratuito, el formulario solo envía desde el navegador en el dominio real (no por herramientas server-side).
 
 ## Cómo se construyó
 
